@@ -18,6 +18,15 @@ export function registerRoutes(app: Express): Server {
     res.json(news);
   });
 
+  app.get("/api/news/:id", async (req, res) => {
+    const newsItem = await storage.getNewsById(parseInt(req.params.id));
+    if (!newsItem) {
+      res.status(404).json({ message: "News not found" });
+      return;
+    }
+    res.json(newsItem);
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

@@ -7,18 +7,18 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <a className="text-2xl font-bold text-primary">BeautyEssence</a>
+            <span className="text-2xl font-bold text-primary cursor-pointer">BeautyEssence</span>
           </Link>
-          
+
           <nav className="hidden md:flex space-x-8">
             <Link href="/">
-              <a className="text-sm font-medium hover:text-primary transition-colors">Home</a>
+              <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">Home</span>
             </Link>
             <Link href="/products">
-              <a className="text-sm font-medium hover:text-primary transition-colors">Products</a>
+              <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">Products</span>
             </Link>
             <Link href="/news">
-              <a className="text-sm font-medium hover:text-primary transition-colors">News</a>
+              <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">News</span>
             </Link>
           </nav>
 

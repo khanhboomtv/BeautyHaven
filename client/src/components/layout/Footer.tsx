@@ -11,19 +11,19 @@ export function Footer() {
               Your trusted source for premium beauty and skincare products.
             </p>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <div className="space-y-2">
               <Link href="/products">
-                <a className="block text-sm opacity-80 hover:opacity-100">Products</a>
+                <span className="block text-sm opacity-80 hover:opacity-100 cursor-pointer">Products</span>
               </Link>
               <Link href="/news">
-                <a className="block text-sm opacity-80 hover:opacity-100">News</a>
+                <span className="block text-sm opacity-80 hover:opacity-100 cursor-pointer">News</span>
               </Link>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm opacity-80">
@@ -32,7 +32,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-primary-foreground/10 text-center text-sm opacity-60">
           <p>&copy; 2024 BeautyEssence. All rights reserved.</p>
         </div>
