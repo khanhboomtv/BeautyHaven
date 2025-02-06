@@ -12,12 +12,17 @@ export function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           poster="https://images.unsplash.com/photo-1674301927403-870c370ef75f"
         >
-          {/* Replace this URL with your actual video URL */}
+          {/* Using a reliable MP4 video source */}
           <source 
-            src="https://player.vimeo.com/external/373824510.sd.mp4?s=50c647f5e8c4ae8ddd505e674394a67bd7d5b06f&profile_id=164&oauth2_token_id=57447761" 
+            src="https://cdn.coverr.co/videos/coverr-cosmetics-products-2574/preview/coverr-cosmetics-products-2574-preview.mp4" 
             type="video/mp4"
           />
-          Your browser does not support the video tag.
+          {/* Fallback for browsers that don't support video */}
+          <img 
+            src="https://images.unsplash.com/photo-1674301927403-870c370ef75f"
+            alt="Beauty products"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
         </video>
         <div className="absolute inset-0 bg-black/40" />
       </div>
