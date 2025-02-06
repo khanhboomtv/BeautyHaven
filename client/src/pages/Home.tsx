@@ -1,10 +1,11 @@
+import { type NextPage } from "next";
 import { Hero } from "@/components/Hero";
 import { ProductCard } from "@/components/ProductCard";
 import { NewsCard } from "@/components/NewsCard";
 import { useQuery } from "@tanstack/react-query";
 import { type Product, type News } from "@shared/schema";
 
-export default function Home() {
+const Home: NextPage = () => {
   const { data: products } = useQuery<Product[]>({ 
     queryKey: ["/api/products"]
   });
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
@@ -40,4 +41,6 @@ export default function Home() {
       </section>
     </div>
   );
-}
+};
+
+export default Home;

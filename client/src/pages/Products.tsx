@@ -1,31 +1,21 @@
-import { ProductCard } from "@/components/ProductCard";
+import { type NextPage } from "next";
 import { useQuery } from "@tanstack/react-query";
+import { ProductCard } from "@/components/ProductCard";
 import { type Product } from "@shared/schema";
 
-export default function Products() {
-  const { data: products, isLoading } = useQuery<Product[]>({ 
-    queryKey: ["/api/products"]
+const Products: NextPage = () => {
+  const { data: products = [] } = useQuery({
+    queryKey: ["products"],
+    queryFn: () => fetch("/api/products").then(res => res.json())
   });
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-8">Our Products</h1>
-        
-        {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, i) => (
-              <div key={i} className="h-[300px] bg-gray-100 animate-pulse rounded-lg" />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {products?.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        )}
-      </div>
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
     </div>
   );
-}
+};
+
+export default Products;
