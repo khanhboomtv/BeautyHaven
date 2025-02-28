@@ -15,114 +15,106 @@ export class MemStorage implements IStorage {
     this.products = [
       {
         id: 1,
-        name: "Natural Face Cream",
-        description: "Nourishing cream for all skin types",
-        price: 2999,
-        image: "https://images.unsplash.com/photo-1503236823255-94609f598e71",
-        category: "skincare"
+        name: "Màu Nhuộm Thuần Chay Lively",
+        description: "100% thành phần từ tự nhiên. Không amoniac, không parapen. Cruelty-Free. An toàn, dịu nhẹ, không gây kích ứng da đầu. Tóc mềm bóng, màu sâu, lâu trôi.",
+        price: "",
+        image: "/images/products/1.jpg",
+        category: ""
       },
       {
         id: 2,
-        name: "Organic Lip Balm",
-        description: "Moisturizing lip care",
-        price: 999,
-        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9",
-        category: "lips"
+        name: "SANI HABIT",
+        description: "Được bào chế với thành phần 100% tự nhiên với chất \"chống trùng\" như mật ong, than, quế, bạch đàn, tinh dầu tràm và prebiotics. Sani Habit làm sạch, cấp nước và sát trùng cho tóc và da đầu của bạn",
+        price: "520k / 1 cặp 250ml",
+        image: "/images/products/2.jpg",
+        category: ""
       },
       {
         id: 3,
-        name: "Anti-Aging Serum",
-        description: "Advanced formula for youthful skin",
-        price: 4999,
-        image: "https://images.unsplash.com/photo-1570194065650-d707c3c52b24",
+        name: "Uốn Lạnh Nouvelle",
+        description: "Loại uốn lạnh có tính kiềm mềm giúp tóc có những lọn xoăn tự nhiên, mềm mại mà không tổn hại đến cấu trúc tóc. Có 3 loại dành cho tóc khỏe, thường và yếu",
+        price: "",
+        image: "/images/products/3.jpg",
         category: "skincare"
       },
       {
         id: 4,
-        name: "Vitamin C Toner",
-        description: "Brightening and refreshing toner",
-        price: 1999,
-        image: "https://images.unsplash.com/photo-1601049676869-702ea24cfd76",
+        name: "OHKASAKURA ND600 - ND630W",
+        description: "Cặp kéo Elite 1🌟. <br/>Sản phẩm chính hãng, bảo hành chế độ công ty, 1 đổi 1 nếu do lỗi của nhà sản xuất",
+        price: "",
+        image: "/images/products/4.jpg",
         category: "skincare"
       },
       {
         id: 5,
-        name: "Hydrating Mask",
-        description: "Deep hydration treatment",
-        price: 1499,
-        image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908",
+        name: "Nouvelle Argan",
+        description: "Tinh dầu Argan nguyên chất dung tích 100ml",
+        price: "",
+        image: "/images/products/5.jpg",
         category: "masks"
       },
       {
         id: 6,
-        name: "Eye Cream",
-        description: "Gentle care for delicate eye area",
-        price: 3499,
-        image: "https://images.unsplash.com/photo-1567165872041-2991e50cc458",
+        name: "Dưỡng ẩm Moroccanoil",
+        description: "Cặp 500ml dưỡng ẩm Moroccanoil tặng kèm 1 lược chải chính hãng",
+        price: "",
+        image: "/images/products/6.jpg",
         category: "skincare"
       },
       {
         id: 7,
-        name: "Gentle Cleanser",
-        description: "Daily facial cleanser for sensitive skin",
-        price: 2499,
-        image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571",
+        name: "Oxy thơm trợ nhuộm",
+        description: "Oxy thơm trợ nhuộm, giảm thiểu tối đa cắn, xót, rát da đầu ... ",
+        price: "",
+        image: "/images/products/7.jpg",
         category: "skincare"
       },
       {
         id: 8,
-        name: "Sunscreen SPF 50",
-        description: "Broad spectrum UV protection",
-        price: 2799,
-        image: "https://images.unsplash.com/photo-1556227702-d1e4e7b5c232",
+        name: "OHKASAKURA ND600C - ND600",
+        description: "Sản phẩm chính hãng, bảo hành chế độ công ty , 1 đổi 1 nếu do lỗi của nhà sản xuất",
+        price: "",
+        image: "/images/products/8.jpg",
         category: "suncare"
       },
-      {
-        id: 9,
-        name: "Night Repair Cream",
-        description: "Intensive overnight treatment",
-        price: 3999,
-        image: "https://images.unsplash.com/photo-1570179538662-31968d08c224",
-        category: "skincare"
-      }
     ];
 
     this.news = [
       {
         id: 1,
-        title: "The Future of Clean Beauty",
-        content: "Discover the latest trends in sustainable cosmetics. The beauty industry is undergoing a major transformation as consumers become more conscious about the ingredients in their products and their impact on the environment. Clean beauty brands are leading the charge by developing innovative formulations that are both effective and environmentally responsible. From biodegradable packaging to ethically sourced ingredients, we're seeing a revolution in how beauty products are created and marketed. This shift isn't just about removing harmful ingredients; it's about creating products that are good for both people and the planet.",
-        image: "https://images.unsplash.com/photo-1455849318743-b2233052fcff",
-        date: new Date("2024-03-01")
+        title: "Khóa học cắt uốn Hàn Quốc  xu hướng 2025",
+        content: "- Trực tiếp hướng dẫn bởi giáo sư hàng đầu Hàn Quốc - KIM JI SEON!</br>- Học hỏi kinh nghiệm từ đại sứ thương hiệu ECO - NAM HAIR !</br>- Được đào tạo bởi giám đốc kỹ thuật VĨNH HAIR , chuyên gia kỹ thuật đỉnh cao !</br></br><p>Mỹ Phẩm Bảo Hân sẽ có bộ phận chăm sóc gửi thông tin chi tiết đến khách hàng</p>",
+        image: "/images/news/1.jpg",
+        date: new Date("2024-02-24")
       },
       {
         id: 2,
-        title: "Skincare Myths Debunked",
-        content: "Leading dermatologists address common skincare misconceptions. Many popular beliefs about skincare have been passed down through generations or spread through social media, but not all of them are based on scientific evidence. Our panel of experts breaks down some of the most persistent myths and provides evidence-based advice for maintaining healthy skin. From the truth about pore size to the real effects of chocolate on acne, we're setting the record straight on these widespread misconceptions.",
-        image: "https://images.unsplash.com/photo-1576426863848-c21f53c60b19",
-        date: new Date("2024-02-28")
+        title: "TRAINING COLOR MASTERY - Đông Trần",
+        content: "<p>Nội Dung Chính Khóa Học 1 Ngày!</p></br>- Ôn lại kiến thức màu căn bản tiêu chuẩn quốc tế.</br>- Phân tích và hệ thống hóa hệ màu Châu Âu.</br>- Nắm rõ phương pháp và cách tính nâng tone - hạ tone.</br>- Xử lý cân bằng màu với nền tóc loang lổ , nhiều khúc màu để bền màu , đặc biệt hậu mầu không bị vàng sỉn.</br>- Giải mã toàn bộ phương pháp nhuộm màu công sở 1 lần max tone.</br>- Phân tích và giải đáp toàn bộ % màu ẩn trên từng tuýp thuốc màu mong muốn.</br></br><p>Mỹ Phẩm Bảo Hân sẽ có bộ phận chăm sóc gửi thông tin chi tiết đến khách hàng</p>",
+        image: "/images/news/2.jpg",
+        date: new Date("2025-02-10")
       },
       {
         id: 3,
-        title: "Natural Ingredients Revolution",
-        content: "How traditional ingredients are making a comeback in modern skincare. Ancient beauty secrets from various cultures are being rediscovered and validated by modern science. Ingredients like turmeric, honey, and green tea, which have been used for centuries in traditional medicine, are now being incorporated into high-tech skincare formulations. This fusion of old and new is creating products that honor traditional wisdom while leveraging contemporary scientific advances.",
-        image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b",
-        date: new Date("2024-02-25")
+        title: "TRAINING HAIR CUTTING – Anh Sơn Sassoon",
+        content: "<p>Nội Dung Chính Khóa Học 1 Ngày!</p></br>- Kỹ thuật cắt 3 bài tóc ngắn ứng dụng salon 100% (bob, nhật hàn, random ) chỉ với 5 phút 1 bài cắt đã tự ôm và mềm mại.</br>- Các mẫu tóc hot trend , được thiết kế trên nhu cầu thực tế của khách hàng hiện nay , dễ áp dụng và phù hợp với mọi salon.</br>- Kỹ thuật cắt nhanh , chuẩn xác giúp tiết kiệm thời gian nhưng vẫn đảm bảo độ chính xác và chất lượng dịch vụ.</br>- Chia sẻ kinh nghiệm thực chiến những mẹo nhỏ nhưng cực kỳ hiệu quả từ chính trải nghiệm thực tế.</br>- Chia sẻ kỹ thuật phối màu , hilight dành cho tóc ngắn.</br>- Thực hành trực tiếp , cầm tay chỉ việc ngay tại lớp học , cam kết học xong về cắt được ngay.</br></br><p>Mỹ Phẩm Bảo Hân sẽ có bộ phận chăm sóc gửi thông tin chi tiết đến khách hàng</p>",
+        image: "/images/news/3.jpg",
+        date: new Date("2024-02-07")
       },
       {
         id: 4,
-        title: "The Science of Anti-Aging",
-        content: "Breakthrough research reveals new approaches to skin aging. Scientists have made significant strides in understanding the molecular mechanisms behind skin aging. This new research has led to the development of more effective anti-aging ingredients and treatments. We explore the latest scientific discoveries and how they're being translated into practical skincare solutions that can help maintain youthful, healthy skin at any age.",
-        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03",
-        date: new Date("2024-02-20")
+        title: "MASTER COLOR & CUT – GouJing ( Quách Tĩnh)",
+        content: "<p>Nội Dung Chương Trình 3 Ngày !</p></br><p>Ngày 1: Nghệ Thuật Phối Màu & Tạo Vân Tóc Cao Cấp</p></br>- Phân tích chất tóc , hệ thống màu sắc , và cách nhuộm nhanh , chuẩn xác.</br>- Kỹ thuật phối màu nền và màu cao cấp , tạo hiệu ứng bóng sáng chuyên nghiệp.</br>- Thực hành cách phối màu từ cơ bản đến nâng cao , tạo vân tóc từ đậm đến nhạt không cần nhiều bước.</br>- Kỹ thuật cắt mỏng cấu trúc tóc , cắt tỉa nâng cao và phân vùng nhuộm chính xác.</br></br><p>Ngày 2: Sáng Tạo & Xu Hướng Y2K</p></br>- Kỹ thuật phân vùng nhuộm tóc ngắn , lớp dưới và phân vùng nhuộm Y2K.</br>- Bí quyết làm nổi bật vị trí đẹp nhất với tỷ lệ phối màu hoàn hảo</br>- Giải pháp nhuộm đen , sáng , xử lý tóc yếu và nối chân tóc hiệu quả.</br>- Lý thuyết đánh nền , kiểm soát tỷ lệ oxy và bột tẩy để đạt hiệu ứng đồng đều.</br></br><p>Ngày 3: Thực Hành Trực Tiếp</p></br>- Thực hành với trợ giảng và giáo viên hướng dẫn , ôn tập cách phán đoán và điều chỉnh màu tóc</br>- Phối màu bóng , sáng và cách mở nền chính xác cho mọi chất tóc.</br>- Kỹ thuật cắt trượt, thổi khô và hoàn thiện kiểu tóc đẹp nhất</br>- Chụp ảnh tác phẩm, tham gia chấm điểm, và nhận phần thưởng đặc biệt dành cho những nhà tạo mẫu xuất sắc nhất.</br></br><p>Mỹ Phẩm Bảo Hân sẽ có bộ phận chăm sóc gửi thông tin chi tiết đến khách hàng</p>",
+        image: "/images/news/4.jpg",
+        date: new Date("2024-02-05")
       },
       {
         id: 5,
-        title: "Sustainable Beauty Packaging",
-        content: "How the industry is tackling plastic waste. The beauty industry is taking bold steps to address its environmental impact, particularly in packaging. From refillable containers to plastic-free alternatives, brands are innovating to reduce waste while maintaining product integrity. We explore the latest sustainable packaging solutions and how they're changing the way we think about beauty product consumption.",
-        image: "https://images.unsplash.com/photo-1585232004423-244e0e6904e3",
-        date: new Date("2024-02-15")
-      }
+        title: "Khai Xuân",
+        content: "Mỹ Phẩm Bảo Hân kính chúc quý khách hàng và đối tác một năm mới thật nhiều sức khỏe , vạn sự như ý.</br> Có những phần quà đặc biệt sẽ được tặng kèm cho những đơn hàng đầu tiên.",
+        image: "/images/news/5.jpg",
+        date: new Date("2025-02-03")
+      },
     ];
   }
 

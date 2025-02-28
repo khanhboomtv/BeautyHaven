@@ -19,8 +19,8 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardContent>
       <CardFooter className="p-4 flex flex-col">
         <h3 className="font-semibold">{product.name}</h3>
-        <p className="text-sm text-muted-foreground mt-1">{product.description}</p>
-        <p className="mt-2 font-medium">${(product.price / 100).toFixed(2)}</p>
+        <p className="text-sm text-muted-foreground text-center mt-1" dangerouslySetInnerHTML={{__html: product.description}}></p>
+        {/*<p className="mt-2 font-medium">{product.price}</p>*/}
       </CardFooter>
     </Card>
   );

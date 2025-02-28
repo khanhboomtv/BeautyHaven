@@ -7,11 +7,11 @@ import Carousel from "@/components/Carousel";
 import { Link } from "wouter";
 
 export default function Home() {
-  const { data: products } = useQuery<Product[]>({ 
+  const { data: products } = useQuery<Product[]>({
     queryKey: ["/api/products"]
   });
 
-  const { data: news } = useQuery<News[]>({ 
+  const { data: news } = useQuery<News[]>({
     queryKey: ["/api/news"]
   });
 
@@ -21,9 +21,9 @@ export default function Home() {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
+          <h2 className="text-3xl font-bold mb-8">Sản phẩm nổi bật</h2>
           <Carousel>
-            {products?.map((product) => (
+            {products?.slice(0, 4).map((product) => (
               <div key={product.id} className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-2">
                 <ProductCard product={product} />
               </div>
@@ -34,7 +34,7 @@ export default function Home() {
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Latest News</h2>
+          <h2 className="text-3xl font-bold mb-8">Tin mới nhất</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {news?.slice(0, 2).map((item) => (
               <Link key={item.id} href={`/news/${item.id}`}>

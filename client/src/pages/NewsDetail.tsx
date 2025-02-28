@@ -55,17 +55,17 @@ export default function NewsDetail() {
       <Link href="/news">
         <Button variant="ghost" className="mb-4">
           <ChevronLeft className="h-4 w-4 mr-2" />
-          Back to News
+          Quay lại Tin tức
         </Button>
       </Link>
 
       <Card>
         <CardContent className="p-0">
-          <div className="aspect-video relative overflow-hidden">
+          <div className="relative">
             <img
               src={news.image}
               alt={news.title}
-              className="object-cover w-full h-full"
+              className="w-full"
             />
           </div>
         </CardContent>
@@ -76,9 +76,7 @@ export default function NewsDetail() {
             </p>
             <h1 className="text-3xl font-bold">{news.title}</h1>
           </div>
-          <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
-            {news.content}
-          </p>
+          <p className="text-muted-foreground whitespace-pre-line leading-relaxed" dangerouslySetInnerHTML={{__html: news.content}}></p>
         </CardHeader>
       </Card>
     </div>
