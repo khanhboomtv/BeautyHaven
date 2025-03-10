@@ -12,7 +12,7 @@ export function Hero() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
