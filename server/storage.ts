@@ -1,7 +1,9 @@
-import { type Product, type InsertProduct, type News, type InsertNews } from "@shared/schema";
+import { type Product, type InsertProduct, type News, type InsertNews, type Admin } from "@shared/schema";
 
 export interface IStorage {
+  validateAdmin(username: string, password: string): Promise<Admin | null>;
   getAllProducts(): Promise<Product[]>;
+  getFeaturedProducts(): Promise<Product[]>;
   getProductsByCategory(category: string): Promise<Product[]>;
   getAllNews(): Promise<News[]>;
   getNewsById(id: number): Promise<News | null>;
@@ -10,8 +12,15 @@ export interface IStorage {
 export class MemStorage implements IStorage {
   private products: Product[];
   private news: News[];
+  private adminUser: Admin;
 
   constructor() {
+    this.adminUser = {
+      id: 1,
+      username: "admin",
+      password: "baohancosmetics" // In a real app, this should be hashed
+    };
+
     this.products = [
       {
         id: 1,
@@ -19,6 +28,7 @@ export class MemStorage implements IStorage {
         description: "100% thành phần từ tự nhiên. Không amoniac, không parapen. Cruelty-Free. An toàn, dịu nhẹ, không gây kích ứng da đầu. Tóc mềm bóng, màu sâu, lâu trôi.",
         price: "",
         image: "/images/products/1.jpg",
+        featured: true,
         category: ""
       },
       {
@@ -27,6 +37,7 @@ export class MemStorage implements IStorage {
         description: "Được bào chế với thành phần 100% tự nhiên với chất \"chống trùng\" như mật ong, than, quế, bạch đàn, tinh dầu tràm và prebiotics. Sani Habit làm sạch, cấp nước và sát trùng cho tóc và da đầu của bạn",
         price: "520k / 1 cặp 250ml",
         image: "/images/products/2.jpg",
+        featured: true,
         category: ""
       },
       {
@@ -35,6 +46,7 @@ export class MemStorage implements IStorage {
         description: "Loại uốn lạnh có tính kiềm mềm giúp tóc có những lọn xoăn tự nhiên, mềm mại mà không tổn hại đến cấu trúc tóc. Có 3 loại dành cho tóc khỏe, thường và yếu",
         price: "",
         image: "/images/products/3.jpg",
+        featured: true,
         category: "skincare"
       },
       {
@@ -43,6 +55,7 @@ export class MemStorage implements IStorage {
         description: "Cặp kéo Elite 1🌟. <br/>Sản phẩm chính hãng, bảo hành chế độ công ty, 1 đổi 1 nếu do lỗi của nhà sản xuất",
         price: "",
         image: "/images/products/4.jpg",
+        featured: true,
         category: "skincare"
       },
       {
@@ -51,6 +64,7 @@ export class MemStorage implements IStorage {
         description: "Tinh dầu Argan nguyên chất dung tích 100ml",
         price: "",
         image: "/images/products/5.jpg",
+        featured: false,
         category: "masks"
       },
       {
@@ -59,6 +73,7 @@ export class MemStorage implements IStorage {
         description: "Cặp 500ml dưỡng ẩm Moroccanoil tặng kèm 1 lược chải chính hãng",
         price: "",
         image: "/images/products/6.jpg",
+        featured: false,
         category: "skincare"
       },
       {
@@ -67,6 +82,7 @@ export class MemStorage implements IStorage {
         description: "Oxy thơm trợ nhuộm, giảm thiểu tối đa cắn, xót, rát da đầu ... ",
         price: "",
         image: "/images/products/7.jpg",
+        featured: false,
         category: "skincare"
       },
       {
@@ -75,6 +91,7 @@ export class MemStorage implements IStorage {
         description: "Sản phẩm chính hãng, bảo hành chế độ công ty, 1 đổi 1 nếu do lỗi của nhà sản xuất",
         price: "",
         image: "/images/products/8.jpg",
+        featured: false,
         category: "suncare"
       },
     ];
@@ -132,20 +149,81 @@ export class MemStorage implements IStorage {
     ];
   }
 
+  async validateAdmin(username: string, password: string): Promise<Admin | null> {
+    if (username === this.adminUser.username && password === this.adminUser.password) {
+      return this.adminUser;
+    }
+    return null;
+  }
+
   async getAllProducts(): Promise<Product[]> {
     return this.products;
+  }
+
+  async getFeaturedProducts(): Promise<Product[]> {
+    return this.products.filter(p => p.featured);
   }
 
   async getProductsByCategory(category: string): Promise<Product[]> {
     return this.products.filter(p => p.category === category);
   }
 
+  async createProduct(product: InsertProduct): Promise<Product> {
+    const newProduct = {
+      ...product,
+      id: Math.max(0, ...this.products.map(p => p.id)) + 1,
+      featured: product.featured ?? false
+    };
+    this.products.push(newProduct);
+    return newProduct;
+  }
+
+  async updateProduct(id: number, product: Partial<InsertProduct>): Promise<Product> {
+    const index = this.products.findIndex(p => p.id === id);
+    if (index === -1) throw new Error("Product not found");
+
+    this.products[index] = { ...this.products[index], ...product };
+    return this.products[index];
+  }
+
+  async deleteProduct(id: number): Promise<void> {
+    const index = this.products.findIndex(p => p.id === id);
+    if (index !== -1) {
+      this.products.splice(index, 1);
+    }
+  }
+
   async getAllNews(): Promise<News[]> {
-    return this.news;
+    return this.news.sort((a, b) => b.id - a.id);;
   }
 
   async getNewsById(id: number): Promise<News | null> {
     return this.news.find(n => n.id === id) || null;
+  }
+
+  async createNews(news: InsertNews): Promise<News> {
+    const newNews = {
+      ...news,
+      id: Math.max(0, ...this.news.map(n => n.id)) + 1,
+      date: new Date()
+    };
+    this.news.push(newNews);
+    return newNews;
+  }
+
+  async updateNews(id: number, news: Partial<InsertNews>): Promise<News> {
+    const index = this.news.findIndex(n => n.id === id);
+    if (index === -1) throw new Error("News not found");
+
+    this.news[index] = { ...this.news[index], ...news };
+    return this.news[index];
+  }
+
+  async deleteNews(id: number): Promise<void> {
+    const index = this.news.findIndex(n => n.id === id);
+    if (index !== -1) {
+      this.news.splice(index, 1);
+    }
   }
 }
 
