@@ -29,7 +29,7 @@ export class MemStorage implements IStorage {
         price: "",
         image: "/images/products/1.jpg",
         featured: true,
-        category: ""
+        category: "haircare"
       },
       {
         id: 2,
@@ -38,7 +38,7 @@ export class MemStorage implements IStorage {
         price: "520k / 1 cặp 250ml",
         image: "/images/products/2.jpg",
         featured: true,
-        category: ""
+        category: "haircare"
       },
       {
         id: 3,
@@ -47,16 +47,7 @@ export class MemStorage implements IStorage {
         price: "",
         image: "/images/products/3.jpg",
         featured: true,
-        category: "skincare"
-      },
-      {
-        id: 4,
-        name: "OHKASAKURA ND600 - ND630W",
-        description: "Cặp kéo Elite 1🌟. <br/>Sản phẩm chính hãng, bảo hành chế độ công ty, 1 đổi 1 nếu do lỗi của nhà sản xuất",
-        price: "",
-        image: "/images/products/4.jpg",
-        featured: true,
-        category: "skincare"
+        category: "haircare"
       },
       {
         id: 5,
@@ -65,7 +56,7 @@ export class MemStorage implements IStorage {
         price: "",
         image: "/images/products/5.jpg",
         featured: false,
-        category: "masks"
+        category: "haircare"
       },
       {
         id: 6,
@@ -74,7 +65,7 @@ export class MemStorage implements IStorage {
         price: "",
         image: "/images/products/6.jpg",
         featured: false,
-        category: "skincare"
+        category: "haircare"
       },
       {
         id: 7,
@@ -83,20 +74,45 @@ export class MemStorage implements IStorage {
         price: "",
         image: "/images/products/7.jpg",
         featured: false,
-        category: "skincare"
+        category: "haircare"
+      },
+      {
+        id: 4,
+        name: "OhkaSakura ND600 - ND630W",
+        description: "Cặp kéo Elite 1🌟. <br/>Sản phẩm chính hãng, bảo hành chế độ công ty, 1 đổi 1 nếu do lỗi của nhà sản xuất",
+        price: "",
+        image: "/images/products/4.jpg",
+        featured: true,
+        category: "scissor"
       },
       {
         id: 8,
-        name: "OHKASAKURA ND600C - ND600",
+        name: "OhkaSakura ND600C - ND600",
         description: "Sản phẩm chính hãng, bảo hành chế độ công ty, 1 đổi 1 nếu do lỗi của nhà sản xuất",
         price: "",
         image: "/images/products/8.jpg",
         featured: false,
-        category: "suncare"
+        category: "scissor"
+      },
+      {
+        id: 9,
+        name: "OhkaSakura  Model C - Classic Series",
+        description: "Độ chính xác vượt trội , tăng cường khả năng kiểm soát và đệm hỗ trợ có thể tháo rời để tùy chỉnh theo mong muốn . Chiếc kéo đa năng này phù hợp với nhiều kỹ thuật cắt khác nhau! Có các kích cỡ 5.5 , 6.0 inch",
+        price: "",
+        image: "/images/products/9.jpg",
+        featured: true,
+        category: "scissor"
       },
     ];
 
     this.news = [
+      {
+        id: 8,
+        title: "🔥Khóa cắt uốn chuyên sâu xu hướng 🇰🇷 2025 🔥",
+        content: "★ Cập nhật xu hướng tóc mới nhất năm 2025</br>★ Cách cắt và tạo kiểu shaggy, hushcut, long layer, xoăn bồng bềnh, square layer và xoăn lơi Hàn Quốc</br>★ Cắt & tạo kiểu cá nhân hóa theo yêu cầu của khách hàng</br>★ Mềm hóa & setting perm chuẩn – giữ sóng tự nhiên, không xơ rối, không hư tổn</br>★ Kỹ thuật tái uốn trên nền tóc đã từng qua hóa chất</br>★ Tạo hình ảnh chuyên nghiệp cho hairstylist & salon</br>★ Kỹ thuật chụp ảnh & quay video sản phẩm tóc</br></br>Sau khóa học sẽ được ôn bài qua nhóm online và nhận sự hỗ trợ trực tiếp từ chuyên gia Nam Hair ❤️</br></br>⏰ Thời gian : 15, 16 tháng 4</br>📍 Địa điểm : 90 Nguyễn Tuân, Thanh Xuân, Hà Nội</br>📞 Hotline : 0968630592",
+        image: "/images/news/8.jpg",
+        date: new Date("2025-03-25")
+      },
       {
         id: 7,
         title: "Trải Nghiệm Màu Nhuộm #Gouallty Cùng Master Color Truong Tuan Dung 🔥",
