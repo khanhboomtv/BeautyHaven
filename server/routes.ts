@@ -81,5 +81,33 @@ export function registerRoutes(app: Express): Server {
     res.sendStatus(204);
   });
 
+  app.get("/sitemap.xml", (_req, res) => {
+    const baseUrl = process.env.NODE_ENV === 'production'
+      ? 'https://baohancosmetics.com'
+      : `http://0.0.0.0:3000`;
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+          <loc>${baseUrl}/</loc>
+          <changefreq>daily</changefreq>
+          <priority>1.0</priority>
+        </url>
+        <url>
+          <loc>${baseUrl}/products</loc>
+          <changefreq>daily</changefreq>
+          <priority>0.8</priority>
+        </url>
+        <url>
+          <loc>${baseUrl}/news</loc>
+          <changefreq>daily</changefreq>
+          <priority>0.8</priority>
+        </url>
+      </urlset>`;
+    res.header('Content-Type', 'application/xml');
+    res.send(sitemap);
+  });
+
+
   return createServer(app);
 }
