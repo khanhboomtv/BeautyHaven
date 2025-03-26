@@ -9,7 +9,7 @@ export default function News() {
   });
 
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-4 mt-20">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 p-4 mt-20 mb-10">
       {news.map((item) => (
         <Link key={item.id} href={`/news/${item.id}`}>
           <span className="block hover:no-underline cursor-pointer">

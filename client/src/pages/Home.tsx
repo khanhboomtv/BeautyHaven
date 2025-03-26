@@ -8,7 +8,7 @@ import { Link } from "wouter";
 
 export default function Home() {
   const { data: products } = useQuery<Product[]>({
-    queryKey: ["/api/products"]
+    queryKey: ["/api/products/featured"]
   });
 
   const { data: news } = useQuery<News[]>({
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8">Sản phẩm nổi bật</h2>
           <Carousel>
-            {products?.slice(0, 4).map((product) => (
+            {products?.map((product) => (
               <div key={product.id} className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-2">
                 <ProductCard product={product} />
               </div>

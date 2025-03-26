@@ -23,7 +23,7 @@ export function NewsCard({ news }: NewsCardProps) {
           {format(new Date(news.date), "MMMM d, yyyy")}
         </p>
         <h3 className="font-semibold text-lg">{news.title}</h3>
-        <p className="text-sm text-muted-foreground line-clamp-2" dangerouslySetInnerHTML={{__html: news.content}}></p>
+        {/*<p className="text-sm text-muted-foreground line-clamp-2" dangerouslySetInnerHTML={{__html: news.content}}></p>*/}
       </CardHeader>
     </Card>
   );

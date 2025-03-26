@@ -51,7 +51,7 @@ export default function NewsDetail() {
   }
 
   return (
-    <div className="container mx-auto p-4 mt-20">
+    <div className="container mx-auto p-4 my-20">
       <Link href="/news">
         <Button variant="ghost" className="mb-4">
           <ChevronLeft className="h-4 w-4 mr-2" />
