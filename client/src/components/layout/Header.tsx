@@ -27,6 +27,9 @@ export function Header() {
             <Link href="/news">
               <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">Tin tức</span>
             </Link>
+            <Link href="/videos">
+              <span className="text-sm font-medium hover:text-primary transition-colors cursor-pointer">Video</span>
+            </Link>
           </nav>
 
           <Button variant="outline" className="hidden md:inline-flex" onClick={scrollToBottom}>

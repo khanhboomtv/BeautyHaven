@@ -20,6 +20,13 @@ export const news = pgTable("news", {
   date: timestamp("date").notNull().defaultNow(),
 });
 
+export const videos = pgTable("videos", {
+  id: serial("id").primaryKey(),
+  description: text("description").notNull(),
+  url: text("url").notNull(),
+  featured: boolean("featured").default(false).notNull(),
+});
+
 export const admin = pgTable("admin", {
   id: serial("id").primaryKey(),
   username: text("username").notNull().unique(),
@@ -30,11 +37,9 @@ export const insertProductSchema = createInsertSchema(products).omit({ id: true 
 
 export const insertNewsSchema = createInsertSchema(news).omit({ id: true, date: true })
 
-export const insertAdminSchema = createInsertSchema(admin).omit({ id: true });
-
 export type InsertProduct = z.infer<typeof insertProductSchema>;
 export type Product = typeof products.$inferSelect;
 export type InsertNews = z.infer<typeof insertNewsSchema>;
 export type News = typeof news.$inferSelect;
-export type InsertAdmin = z.infer<typeof insertAdminSchema>;
+export type Video = typeof videos.$inferSelect;
 export type Admin = typeof admin.$inferSelect;

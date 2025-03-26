@@ -11,6 +11,7 @@ import Products from "@/pages/Products";
 import News from "@/pages/News";
 import NewsDetail from "@/pages/NewsDetail";
 import Admin from "@/pages/Admin";
+import Videos from "@/pages/Videos";
 
 function Router() {
   useScrollTop();
@@ -25,6 +26,7 @@ function Router() {
           <Route path="/news" component={News} />
           <Route path="/news/:id" component={NewsDetail} />
           <Route path="/admin" component={Admin} />
+          <Route path="/videos" component={Videos} />
           <Route component={NotFound} />
         </Switch>
       </main>

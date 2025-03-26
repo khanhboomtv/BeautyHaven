@@ -24,7 +24,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">Sản phẩm nổi bật</h2>
           <Carousel>
             {products?.map((product) => (
-              <div key={product.id} className="flex-[0_0_100%] md:flex-[0_0_33.333%] px-2">
+              <div key={product.id} className="flex-[0_0_100%] md:flex-[0_0_33.333%]">
                 <ProductCard product={product} />
               </div>
             ))}

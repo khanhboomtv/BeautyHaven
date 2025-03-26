@@ -1,4 +1,4 @@
-import { type Product, type InsertProduct, type News, type InsertNews, type Admin } from "@shared/schema";
+import {type Product, type InsertProduct, type News, type InsertNews, type Admin, type Video} from "@shared/schema";
 
 export interface IStorage {
   validateAdmin(username: string, password: string): Promise<Admin | null>;
@@ -7,11 +7,14 @@ export interface IStorage {
   getProductsByCategory(category: string): Promise<Product[]>;
   getAllNews(): Promise<News[]>;
   getNewsById(id: number): Promise<News | null>;
+  getAllVideos(): Promise<Video[]>;
+  getFeaturedVideos(): Promise<Video[]>;
 }
 
 export class MemStorage implements IStorage {
   private products: Product[];
   private news: News[];
+  private videos: Video[];
   private adminUser: Admin;
 
   constructor() {
@@ -163,6 +166,44 @@ export class MemStorage implements IStorage {
         date: new Date("2025-02-03")
       },
     ];
+    this.videos = [
+      {
+        id: 6,
+        description: "Quay dựng Video chuyên nghiệp chỉ với 1 chiếc SmartPhone , đào tạo bởi chuyên gia Vũ Văn Lê sẽ diễn ra vào ngày 31 tháng 3 🔥</br>📍 Địa điểm: J03-01 khu đô thị An Phú shop villa, Dương Nội, Hà Đông.",
+        url: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F675127261521163%2F&show_text=false&width=267&t=0",
+        featured: true
+      },
+      {
+        id: 5,
+        description: "Uốn nóng #Eco_br PH 8.0 dành cho tóc đã qua xử lý , cần tái uốn mà vẫn bảo vệ cấu trúc tóc 🔥",
+        url: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1310931286690812%2F&show_text=false&width=267&t=0",
+        featured: true
+      },
+      {
+        id: 4,
+        description: "Uốn / Duỗi Eco_Br được chiết xuất từ các thành phần hoàn toàn từ tự nhiên:<br/>\"Lô Hội\" giúp cấp ẩm giữ tóc luôn mềm mại<br/>\"Tảo Xanh\" giúp bảo vệ tóc trước tác động nhiệt</br>\"Hà Thủ Ô\" giúp tóc chắc khỏe từ gốc</br>#Eco_br  cam kết đem lại những giá trị chuẩn Salon cao cấp 🇰🇷",
+        url: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F914997323897138%2F&show_text=false&width=267&t=0",
+        featured: true
+      },
+      {
+        id: 3,
+        description: "Uốn PH 8.0 #Eco_br</br>Color 7.35 #Nouvelle",
+        url: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F676501948290433%2F&show_text=false&width=267&t=0",
+        featured: true
+      },
+      {
+        id: 2,
+        description: "7.77 Gouallty 🔥",
+        url: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1959462827912413%2F&show_text=false&width=267&t=0",
+        featured: true
+      },
+      {
+        id: 1,
+        description: "#Eco_br được thiết kế với 4 nồng độ PH chuyên biệt:</br>• PH 5.0 - tóc yếu<br/>• PH 7.0 - tóc trung bình</br>• PH 8.0 - tóc đã qua xử lý</br>• PH 9.5 - tóc khỏe",
+        url: "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1379402520070307%2F&show_text=false&width=267&t=0",
+        featured: true
+      },
+    ];
   }
 
   async validateAdmin(username: string, password: string): Promise<Admin | null> {
@@ -240,6 +281,14 @@ export class MemStorage implements IStorage {
     if (index !== -1) {
       this.news.splice(index, 1);
     }
+  }
+
+  async getAllVideos(): Promise<Video[]> {
+    return this.videos;
+  }
+
+  async getFeaturedVideos(): Promise<Video[]> {
+    return this.videos.filter(v => v.featured);
   }
 }
 

@@ -81,6 +81,16 @@ export function registerRoutes(app: Express): Server {
     res.sendStatus(204);
   });
 
+  app.get("/api/videos", async (_req, res) => {
+    const videos = await storage.getAllVideos();
+    res.json(videos);
+  });
+
+  app.get("/api/videos/featured", async (_req, res) => {
+    const featured = await storage.getFeaturedVideos();
+    res.json(featured);
+  });
+
   app.get("/sitemap.xml", (_req, res) => {
     const baseUrl = process.env.NODE_ENV === 'production'
       ? 'https://baohancosmetics.com'
@@ -100,6 +110,11 @@ export function registerRoutes(app: Express): Server {
         </url>
         <url>
           <loc>${baseUrl}/news</loc>
+          <changefreq>daily</changefreq>
+          <priority>0.8</priority>
+        </url>
+        <url>
+          <loc>${baseUrl}/videos</loc>
           <changefreq>daily</changefreq>
           <priority>0.8</priority>
         </url>

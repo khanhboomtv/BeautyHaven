@@ -34,14 +34,14 @@ export default function NewsDetail() {
       <div className="container mx-auto p-4 mt-20">
         <Card>
           <CardContent className="p-6">
-            <h1 className="text-2xl font-bold mb-4">News not found</h1>
+            <h1 className="text-2xl font-bold mb-4">Không tìm thấy Tin tức</h1>
             <p className="text-muted-foreground mb-4">
-              The news article you're looking for doesn't exist or has been removed.
+              Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa.
             </p>
             <Link href="/news">
               <Button>
                 <ChevronLeft className="h-4 w-4 mr-2" />
-                Back to News
+                Quay lại Tin tức
               </Button>
             </Link>
           </CardContent>

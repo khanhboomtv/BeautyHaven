@@ -25,6 +25,11 @@ export function Footer() {
                   Tin tức
                 </span>
                 </Link>
+                <Link href="/videos">
+                <span className="block text-sm opacity-80 hover:opacity-100 cursor-pointer">
+                  Video
+                </span>
+                </Link>
               </div>
             </div>
 
