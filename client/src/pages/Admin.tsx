@@ -23,16 +23,20 @@ export default function Admin() {
 
     // Check authentication status on component mount
     useEffect(() => {
-        const checkAuth = async () => {
+        let authData = localStorage.getItem("isAuthenticated");
+        let isAuth = false;
+        if (authData) {
             try {
-                const res = await fetch("/api/admin/auth-status");
-                const data = await res.json();
-                setIsAuthenticated(data.isAuthenticated);
+                const parsedData: {
+                    status: boolean;
+                    expire_time: number
+                } = JSON.parse(authData);
+                isAuth = parsedData.status && parsedData.expire_time > Date.now();
             } catch (error) {
-                console.error("Failed to check auth status:", error);
+                console.error("Invalid JSON in localStorage", error);
             }
-        };
-        checkAuth();
+        }
+        setIsAuthenticated(isAuth);
     }, []);
 
     // Handle login
@@ -40,6 +44,8 @@ export default function Admin() {
         e.preventDefault();
         try {
             await loginAdmin(username, password);
+            const authData = { "expire_time": Date.now() + 7 * 24 * 60 * 60 * 1000, "status": true }
+            localStorage.setItem("isAuthenticated", JSON.stringify(authData));
             setIsAuthenticated(true);
             toast({
                 title: "Thông báo",
@@ -55,23 +61,15 @@ export default function Admin() {
     };
 
     // Handle logout
-    const handleLogout = async () => {
-        try {
-            await fetch("/api/admin/logout", { method: "POST" });
-            setIsAuthenticated(false);
-            setUsername("");
-            setPassword("");
-            toast({
-                title: "Thông báo",
-                description: "Đăng xuất thành công",
-            });
-        } catch (error) {
-            toast({
-                title: "Lỗi",
-                description: "Đăng xuất thất bại",
-                variant: "destructive",
-            });
-        }
+    const handleLogout = () => {
+        localStorage.removeItem("isAuthenticated");
+        setIsAuthenticated(false);
+        setUsername("");
+        setPassword("");
+        toast({
+            title: "Success",
+            description: "Đăng xuất thành công",
+        });
     };
 
     // Products management

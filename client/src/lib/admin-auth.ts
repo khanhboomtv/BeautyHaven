@@ -1,6 +1,6 @@
 import { apiRequest } from "./queryClient";
 
-export async function loginAdmin(username: string, password: string): Promise<void> {
+export async function loginAdmin(username: string, password: string): Promise<any> {
     const credentials = btoa(`${username}:${password}`);
     const res = await fetch("/api/admin/login", {
         method: "POST",
@@ -12,7 +12,7 @@ export async function loginAdmin(username: string, password: string): Promise<vo
     });
 
     if (!res.ok) {
-        throw new Error("Invalid credentials");
+        throw new Error("Login failed");
     }
 }
 
