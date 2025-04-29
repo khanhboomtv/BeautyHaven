@@ -106,9 +106,41 @@ export class MemStorage implements IStorage {
         featured: true,
         category: "scissor"
       },
+      {
+        id: 10,
+        name: "OhkaSakura Model FA600S - Favorit Series 3",
+        description: "Lưỡi kéo với thiết kế lưỡi lá độc đáo, cực thích hợp cho những vết cắt khô và kỹ thuật cắt trượt, trải nghiệm sự chính xác và dễ dàng cùng từng đường kéo!",
+        price: "",
+        image: "/images/products/10.jpg",
+        featured: false,
+        category: "scissor"
+      },
+      {
+        id: 11,
+        name: "OhkaSakura Elite Series - Model ND63010",
+        description: "Kéo tỉa size 6.0, có 30 răng, độ rơi tóc 10% ~ 15% giúp tóc mỏng bớt nhưng vẫn giữ được form và độ dày tổng thể!",
+        price: "",
+        image: "/images/products/11.jpg",
+        featured: false,
+        category: "scissor"
+      },
     ];
 
     this.news = [
+      {
+        id: 10,
+        title: "Thông báo lịch nghỉ lễ",
+        content: "Kính chúc quý khách hàng kỳ nghỉ lễ vui vẻ và an yên ❤️</br></br>Mỹ Phẩm Bảo Hân 🍀</br></br>✪ | Address : Mipec Long Biên, Ngọc Lâm, Hà Nội</br>✆ | Hotline : 0968630592</br>★ | <a href=\"https://shopee.vn/baohancosmeticss\"> shopee.vn/baohancosmeticss</a>",
+        image: "/images/news/10.jpg",
+        date: new Date("2025-04-28")
+      },
+      {
+        id: 9,
+        title: "🇻🇳🇰🇷 Mastering Korean Cuts & Perms 🇰🇷🇻🇳",
+        content: "• Kỹ thuật cắt xu hướng Hàn Quốc 2025: Layer đa tầng, tạo độ phồng tự nhiên, cắt mái chuẩn Hàn, kết hợp cắt & uốn để giữ nếp lâu</br>• Kỹ thuật uốn nhiệt không gây hư tổn : Giữ tóc mềm mại, bóng mượt, không khô xơ, tối ưu hiệu suất làm việc</br>• Tuyệt chiêu “Tái uốn” : Uốn lại nhiều lần trên cùng nền tóc mà vẫn giữ được độ chắc khỏe, bồng bềnh</br>• Kỹ thuật chuẩn đoán nền tóc & lựa chọn hóa chất phù hợp của chuyên gia Hàn Quốc : Đảm bảo hiệu quả uốn & duy trì chất tóc khỏe mạnh</br>• Thực hành trên manocanh & mẫu thật, hướng dẫn trực tiếp bởi chuyên gia</br>• Tối ưu hóa quy trình làm việc trong Salon : Rút ngắn thời gian thực hiện, nâng cao chất lượng dịch vụ, gia tăng doanh thu</br></br>⏰ Thời gian : 14, 15 tháng 5</br>📍 Địa điểm : J03-01 khu đô thị An Phú Shop Villa, Dương Nội, Hà Đông</br>📞 Hotline : 0968630592",
+        image: "/images/news/9.jpg",
+        date: new Date("2025-04-25")
+      },
       {
         id: 8,
         title: "🔥Khóa cắt uốn chuyên sâu xu hướng 🇰🇷 2025 🔥",
